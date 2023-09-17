@@ -15,8 +15,8 @@
         <nav >
             <h1>E-Comerce</h1>
             <ul>
-                <li><a href="home"></a></li>
-                <li><a href="about"></a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="about">about</a></li>
             </ul>   
         </nav>
     </header>

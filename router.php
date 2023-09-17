@@ -14,8 +14,9 @@ $params = explode('/', $action);
 switch ($params[0]) { // en la primer posicion tengo la accion real
     case 'home':
         showDiscos();
+        break;
     default: 
-        echo "404 - not found";
+        echo "404 - Page not found";
         break;
 }
 
