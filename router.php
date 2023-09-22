@@ -15,6 +15,9 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
     case 'home':
         showDiscos();
         break;
+    case 'add':
+        addDisco();
+        break;
     default: 
         echo "404 - Page not found";
         break;
