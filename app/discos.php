@@ -26,6 +26,8 @@ function showDiscos(){
 
             <img src="./img/disco-img.jpg" alt="">
 
+            <a href="delete/<?php echo $disco->id?>" type="button">Borrar</a>
+
         </div>
     <?php
         }
@@ -39,5 +41,17 @@ function showDiscos(){
 }
 
 function addDisco(){
-    
+    $nombre = $_POST['titulo'];
+    $autor = $_POST['autor'];
+    $genero = $_POST['genero'];
+    $precio = $_POST['precio'];
+
+    insertDisco($nombre,$autor,$genero,$precio);
+
+    header('Location: '. BASE_URL);
+}
+
+function removeDisco($id){
+    deleteDisco($id);
+    header('Location: '. BASE_URL);
 }

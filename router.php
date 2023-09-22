@@ -18,6 +18,9 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
     case 'add':
         addDisco();
         break;
+    case 'delete':
+        removeDisco($params[1]);
+        break;
     default: 
         echo "404 - Page not found";
         break;
