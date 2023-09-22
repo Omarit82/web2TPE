@@ -10,8 +10,8 @@
     <input required type="text" name="genero">
 
     <label>Precio</label>
-    <input required type="text" name="precio">
+    <input required type="float" name="precio">
 
-    <button type="submit">Agregar</button>
+    <button type="submit">Enviar</button>
 
 </form>

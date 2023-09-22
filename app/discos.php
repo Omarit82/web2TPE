@@ -7,7 +7,7 @@ function showDiscos(){
     
     require 'templates/header.php';
 
-    require 'templates/form.php';
+    require 'templates/formAdd.php';
     ?>
     
     <section>
@@ -27,6 +27,8 @@ function showDiscos(){
             <img src="./img/disco-img.jpg" alt="">
 
             <a href="delete/<?php echo $disco->id?>" type="button">Borrar</a>
+            <a href="mod/<?php echo $disco->id?>" type="button">Modificar</a>
+
 
         </div>
     <?php
@@ -54,4 +56,27 @@ function addDisco(){
 function removeDisco($id){
     deleteDisco($id);
     header('Location: '. BASE_URL);
+}
+
+function modDisco($id){
+
+    require_once 'templates/header.php';
+    require_once 'templates/formMod.php';
+    
+    
+    if ((isset($_POST['titulo']))&&(isset($_POST['autor']))&&(isset($_POST['genero']))&&(isset($_POST['precio']))){
+        $nombre = $_POST['titulo'];
+        $autor = $_POST['autor'];
+        $genero = $_POST['genero'];
+        $precio = $_POST['precio'];
+        
+        var_dump($nombre,$autor,$genero,$precio,$id);
+
+        updateDisco($nombre,$autor,$genero,$precio,$id);
+        
+        header('Location: '. BASE_URL);
+    }
+    echo "<br><br>";
+
+    require_once 'templates/footer.php';
 }

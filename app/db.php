@@ -32,3 +32,10 @@
         $query = $db->prepare('DELETE FROM discos WHERE id = ?');
         $query->execute([$id]);
     }
+
+    function updateDisco($nombre,$autor,$genero,$precio,$id){
+        $db = getConection();
+
+        $query = $db->prepare('UPDATE discos SET nombre = ?, autor = ?, genero = ?, precio = ? WHERE id = ?');
+        $query->execute([$nombre,$autor,$genero,$precio,$id]);
+    }
