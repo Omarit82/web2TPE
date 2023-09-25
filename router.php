@@ -1,6 +1,7 @@
 <?php
 
 require_once "app/discos.php";
+require_once "app/about.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -23,6 +24,13 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         break;
     case 'mod':
         modDisco($params[1]);
+        break;
+    case 'about':
+        if (empty($params[1])){
+            showAboutAll();
+        }else{
+            showAbout($params[1]);
+        }
         break;
     default: 
         echo "404 - Page not found";
