@@ -1,4 +1,4 @@
-<form action="" method="POST">
+<form class="mb-3 formulario" action="" method="POST">
     
     <label class="form-label">Titulo</label>
     <input class="form-control" required type="text" name="titulo" placeholder="title">

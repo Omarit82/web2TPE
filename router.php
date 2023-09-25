@@ -25,12 +25,8 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
     case 'mod':
         modDisco($params[1]);
         break;
-    case 'about':
-        if (empty($params[1])){
-            showAboutAll();
-        }else{
-            showAbout($params[1]);
-        }
+    case 'about': 
+        showAbout();
         break;
     default: 
         echo "404 - Page not found";

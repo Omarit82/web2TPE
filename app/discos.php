@@ -15,7 +15,7 @@ function showDiscos(){
     <?php
         foreach($discos as $disco){
     ?>
-        <div>
+        <div class="verDisco">
 
             <h3><?php echo $disco->nombre?></h3>
             <p>
