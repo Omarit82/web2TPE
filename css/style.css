@@ -7,3 +7,12 @@ body {
     background-color: #5959e2;
     color:white;
 }
+
+.formulario {
+    max-width: 65%;
+    margin: auto;
+}
+
+a {
+    margin-left: 15px;
+}

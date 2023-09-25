@@ -14,9 +14,9 @@
     <header>
         <nav class="titulo container-fluid">
             <h1 class="col-12 text-center">Discos Musicales E-Comerce</h1>
-            <ul class="">
-                <li><a href="home">Home</a></li>
-                <li><a href="about">About</a></li>
-            </ul>   
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <a class="navbar-brand" href="home">Home</a>
+                <a class="navbar-brand" href="about">About</a>
+            </nav>  
         </nav>
     </header>
