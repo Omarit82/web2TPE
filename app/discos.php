@@ -16,20 +16,15 @@ function showDiscos(){
         foreach($discos as $disco){
     ?>
         <div class="verDisco">
-
             <h3><?php echo $disco->nombre?></h3>
             <p>
                 Autor: <?php echo $disco->autor ?>  
                 (<?php echo $disco->genero ?>)  |  
                 Precio: <?php echo $disco->precio?>
             </p>
-
             <img src="./img/disco-img.jpg" alt="">
-
             <a href="delete/<?php echo $disco->id?>" type="button">Borrar</a>
             <a href="mod/<?php echo $disco->id?>" type="button">Modificar</a>
-
-
         </div>
     <?php
         }
@@ -76,7 +71,6 @@ function modDisco($id){
         
         header('Location: '. BASE_URL);
     }
-    echo "<br><br>";
 
     require_once 'templates/footer.php';
 }

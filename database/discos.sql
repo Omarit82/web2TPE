@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-09-2023 a las 19:28:41
+-- Tiempo de generación: 25-09-2023 a las 16:22:54
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -36,6 +36,14 @@ CREATE TABLE `discos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `discos`
+--
+
+INSERT INTO `discos` (`id`, `nombre`, `autor`, `genero`, `precio`) VALUES
+(1, 'The dark side of the moon', 'Pink Floyd', 'Rock', 8990.9),
+(2, 'Use your Ilussion I', 'Guns & Roses', 'Rock', 7500.9);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -53,7 +61,7 @@ ALTER TABLE `discos`
 -- AUTO_INCREMENT de la tabla `discos`
 --
 ALTER TABLE `discos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
