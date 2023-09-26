@@ -54,5 +54,14 @@
            $nivel = $user->nivel;
            showLogin($nivel);
         }
-}
+    }
+
+    function showGeneros($gen){
+        $db = getConection();
+        $query = $db->prepare('SELECT * FROM discos WHERE genero=?');
+        $query ->execute([$gen]);
+
+        $discos= $query->fetchAll(PDO::FETCH_OBJ);
+        return $discos;
+    }
     

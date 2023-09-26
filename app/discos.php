@@ -5,6 +5,7 @@ require_once './app/db.php';
 function showDiscos($user){
     $discos = getDiscos();
     require 'templates/header.php';
+    require_once 'templates/formFiltro.php';
     if(isset($user)&($user === 'admin')){ 
         require 'templates/formAdd.php';
     }?>
@@ -67,4 +68,22 @@ function modDisco($id){
     }
 
     require_once 'templates/footer.php';
+}
+
+function filtro(){
+    $gen = $_POST['genero'];
+    $discos = showGeneros($gen);
+    echo $discos;
+    require_once 'templates/header.php';
+    require_once 'templates/formFiltro.php';
+    foreach($discos as $disco){ ?>
+        <div class="verDisco">
+            <h3><?php echo $disco->nombre?></h3>
+            <p>
+                Autor: <?php echo $disco->autor ?>  
+                (<?php echo $disco->genero ?>)  |  Precio: <?php echo $disco->precio?>
+            </p>
+            <img src="./img/disco-img.jpg" alt="">
+        </div>
+   <?php }
 }

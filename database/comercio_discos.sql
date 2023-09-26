@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 26, 2023 at 02:55 AM
+-- Generation Time: Sep 26, 2023 at 08:50 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -44,7 +44,23 @@ INSERT INTO `discos` (`id`, `nombre`, `autor`, `genero`, `precio`) VALUES
 (2, 'Use your Ilussion I', 'Guns & Roses', 'Rock', 7500.9),
 (3, 'El Tesoro de los Inocentes', 'Los Fundamentalistas del Aire Acondicionado', 'Rock', 6500),
 (4, 'Porco Rex', 'Los Fundamentalistas del Aire Acondicionado', 'Rock', 7200.5),
-(5, 'Girotondo', 'Giusy Ferreri', 'Pop', 6250.25);
+(5, 'Girotondo', 'Giusy Ferreri', 'Pop', 6250.25),
+(6, 'Cortometraggi', 'Giusy Ferreri', 'Pop', 4250.75),
+(7, 'Gulp!', 'Patricio Rey y sus Redonditos de Ricota', 'Rock', 6500);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Genero`
+--
+
+CREATE TABLE `Genero` (
+  `id_genero` int(11) NOT NULL,
+  `rock` varchar(75) NOT NULL,
+  `blues` varchar(75) NOT NULL,
+  `pop` varchar(75) NOT NULL,
+  `clasica` varchar(75) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -79,6 +95,12 @@ ALTER TABLE `discos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `Genero`
+--
+ALTER TABLE `Genero`
+  ADD PRIMARY KEY (`id_genero`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -92,7 +114,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `discos`
 --
 ALTER TABLE `discos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `Genero`
+--
+ALTER TABLE `Genero`
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

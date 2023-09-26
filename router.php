@@ -35,6 +35,9 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
     case 'tienda':
         checkLog();
         break;
+    case 'filtro':
+        filtro();
+        break;
     default: 
         echo "404 - Page not found";
         break;
