@@ -1,10 +1,11 @@
+
 <form action="filtro" method="POST" class="mb-3 formulario">
+    <?php $generos = getGen(); ?>
     <select name="genero" class="form-select">
         <option  value="" selected></option>
-        <option  value="rock">Rock</option>
-        <option  value="blues">Blues</option>
-        <option  value="pop">Pop</option>
-        <option  value="clasica">Clasica</option>
+        <?php foreach ($generos as $genero) { ?>
+           <option value="<?php echo $genero->genero?>"><?php echo $genero->genero?></option>;<?php
+        }?>
     </select>
     <button type="submit" class="btn btn-info boton">Filtrar</button>
 </form>

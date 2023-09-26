@@ -73,7 +73,6 @@ function modDisco($id){
 function filtro(){
     $gen = $_POST['genero'];
     $discos = showGeneros($gen);
-    echo $discos;
     require_once 'templates/header.php';
     require_once 'templates/formFiltro.php';
     foreach($discos as $disco){ ?>

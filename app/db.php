@@ -25,6 +25,7 @@
 
         $query = $db->prepare('INSERT INTO discos(nombre,autor,genero,precio) VALUES (?,?,?,?)');
         $query->execute([$nombre,$autor,$genero,$precio]);
+
     }
 
     function deleteDisco($id){
@@ -63,5 +64,14 @@
 
         $discos= $query->fetchAll(PDO::FETCH_OBJ);
         return $discos;
+    }
+
+    function getGen(){
+        $db = getConection();
+        $query = $db->prepare('SELECT * FROM genero');
+        $query ->execute();
+
+        $generos = $query->fetchAll(PDO::FETCH_OBJ);
+        return $generos;
     }
     

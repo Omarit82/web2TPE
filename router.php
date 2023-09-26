@@ -15,10 +15,18 @@ $params = explode('/', $action);
 
 switch ($params[0]) { // en la primer posicion tengo la accion real
     case 'login':
-        showLogin($params[1]);
+        if(isset($params[1])){
+            showLogin($params[1]);
+        }else{
+            showLogin(null);
+        }
         break;
     case 'home':
-        showDiscos($params[1]);
+        if(isset($params[1])){
+            showDiscos($params[1]);
+        }else{
+            showDiscos(null);
+        }
         break;
     case 'add':
         addDisco();
