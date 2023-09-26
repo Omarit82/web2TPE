@@ -1,6 +1,7 @@
 <?php
     
     require_once 'discos.php';
+    require_once 'login.php';
     
     function getConection(){
         
@@ -39,3 +40,19 @@
         $query = $db->prepare('UPDATE discos SET nombre = ?, autor = ?, genero = ?, precio = ? WHERE id = ?');
         $query->execute([$nombre,$autor,$genero,$precio,$id]);
     }
+    
+    function checkUser($email,$pass){
+        $db = getConection();
+        $query = $db->prepare('SELECT * FROM users WHERE email=? AND pass=?');
+        $query -> execute([$email,$pass]);
+
+        $user = $query->fetch(PDO::FETCH_OBJ);
+
+        if ($user === false){
+            showLogin($user);
+        }else{
+           $nivel = $user->nivel;
+           showLogin($nivel);
+        }
+}
+    

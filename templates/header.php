@@ -17,6 +17,7 @@
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <a class="navbar-brand" href="home">Home</a>
                 <a class="navbar-brand" href="about">About</a>
+                <a class="navbar-brand" href="login">Login</a>
             </nav>  
         </nav>
     </header>

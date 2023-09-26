@@ -12,6 +12,6 @@
     <label class="form-label">Precio</label>
     <input class="form-control" required type="float" name="precio">
 
-    <button type="submit">Enviar</button>
+    <button type="submit" class="btn btn-primary">Enviar</button>
 
 </form>

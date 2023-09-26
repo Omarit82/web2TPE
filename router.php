@@ -2,6 +2,7 @@
 
 require_once "app/discos.php";
 require_once "app/about.php";
+require_once "app/login.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -13,8 +14,11 @@ if (!empty( $_GET['action'])) {
 $params = explode('/', $action);
 
 switch ($params[0]) { // en la primer posicion tengo la accion real
+    case 'login':
+        showLogin($params[1]);
+        break;
     case 'home':
-        showDiscos();
+        showDiscos($params[1]);
         break;
     case 'add':
         addDisco();
@@ -27,6 +31,9 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         break;
     case 'about': 
         showAbout();
+        break;
+    case 'checklog':
+        checkLog();
         break;
     default: 
         echo "404 - Page not found";
