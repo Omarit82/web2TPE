@@ -32,7 +32,7 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
     case 'about': 
         showAbout();
         break;
-    case 'checklog':
+    case 'tienda':
         checkLog();
         break;
     default: 
