@@ -1,6 +1,6 @@
 # web2TPE
 
-Integrantes:   Matias Gabriel Molina 
+Integrantes:   Matias Gabriel Molina molinamatias63@gmail.com
                Omar Armando Roselli roselliomar82@gmail.com 
 
 Tematica: Pagina de comercio de venta de discos musicales.
