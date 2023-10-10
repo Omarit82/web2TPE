@@ -1,5 +1,8 @@
+<?php
+require 'templates/header.phtml';
+?>
 <section class="container">
-    <form action="tienda" method="POST" class="mb-3 formulario">
+    <form action="auth" method="POST" class="mb-3 formulario">
         <label class="form-label">Usuario</label>
         <input type="email" name="email" class="form-control" required/>
         <labelclass="form-label">Password</label>
@@ -7,3 +10,7 @@
         <button type="submit" class="btn btn-primary boton">Login !</button>
     </form> 
 </section>
+
+<?php
+require 'templates/footer.phtml';
+?>

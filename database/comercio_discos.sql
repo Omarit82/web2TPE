@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 26, 2023 at 01:44 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-10-2023 a las 15:35:28
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `comercio_discos`
+-- Base de datos: `comercio_discos`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `discos`
+-- Estructura de tabla para la tabla `discos`
 --
 
 CREATE TABLE `discos` (
@@ -36,34 +36,29 @@ CREATE TABLE `discos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `discos`
+-- Volcado de datos para la tabla `discos`
 --
 
 INSERT INTO `discos` (`id`, `nombre`, `autor`, `genero`, `precio`) VALUES
-(1, 'The dark side of the moon', 'Pink Floyd', 'Rock', 8990.9),
-(2, 'Use your Ilussion I', 'Guns & Roses', 'Rock', 7500.9),
-(3, 'El Tesoro de los Inocentes', 'Los Fundamentalistas del Aire Acondicionado', 'Rock', 6500),
-(4, 'Porco Rex', 'Los Fundamentalistas del Aire Acondicionado', 'Rock', 7200.5),
-(5, 'Girotondo', 'Giusy Ferreri', 'Pop', 6250.25),
-(6, 'Cortometraggi', 'Giusy Ferreri', 'Pop', 4250.75),
-(7, 'Gulp!', 'Patricio Rey y sus Redonditos de Ricota', 'Rock', 6500);
+(1, 'Si Te Agarran Las Ganas', 'Leo Mattioli', 'Cumbia', 4000),
+(14, 'JiJiJi', 'Indio Solari', 'Rock', 5000.33);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Genero`
+-- Estructura de tabla para la tabla `genero`
 --
 
-CREATE TABLE `Genero` (
+CREATE TABLE `genero` (
   `id_genero` int(11) NOT NULL,
   `genero` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `Genero`
+-- Volcado de datos para la tabla `genero`
 --
 
-INSERT INTO `Genero` (`id_genero`, `genero`) VALUES
+INSERT INTO `genero` (`id_genero`, `genero`) VALUES
 (1, 'rock'),
 (2, 'blues'),
 (3, 'pop'),
@@ -72,7 +67,7 @@ INSERT INTO `Genero` (`id_genero`, `genero`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE `users` (
@@ -83,7 +78,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `pass`, `nivel`) VALUES
@@ -92,45 +87,45 @@ INSERT INTO `users` (`id`, `email`, `pass`, `nivel`) VALUES
 (3, 'guest@email.com', '9876', 'user');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `discos`
+-- Indices de la tabla `discos`
 --
 ALTER TABLE `discos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `Genero`
+-- Indices de la tabla `genero`
 --
-ALTER TABLE `Genero`
+ALTER TABLE `genero`
   ADD PRIMARY KEY (`id_genero`);
 
 --
--- Indexes for table `users`
+-- Indices de la tabla `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `discos`
+-- AUTO_INCREMENT de la tabla `discos`
 --
 ALTER TABLE `discos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `Genero`
+-- AUTO_INCREMENT de la tabla `genero`
 --
-ALTER TABLE `Genero`
+ALTER TABLE `genero`
   MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;

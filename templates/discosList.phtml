@@ -1,0 +1,31 @@
+<?php
+    require 'templates/header.phtml';
+
+?>
+
+<section>
+    <?php foreach($discos as $disco){?>
+        
+        <div class="verDisco">
+            <h3><?php echo $disco->nombre?></h3>
+            <p>
+                Autor: <?php echo $disco->autor ?>  
+                (<?php echo $disco->genero ?>)  |  Precio: <?php echo $disco->precio?>
+            </p>
+            <img src="./img/disco-img.jpg" alt="">
+            <?php if(isset($user)&($user === 'admin')){ ?>   
+                <a href="delete/<?php echo $disco->id?>" type="button" class="btn btn-danger">Borrar</a>
+                <a href="mod/<?php echo $disco->id?>" type="button" class="btn btn-primary">Modificar</a>
+            <?php } ?>
+            <?php if(isset($user)&($user === 'user')){ ?>   
+                <a href="buy/<?php echo $disco->id?>" type="button" class="btn btn-success">Comprar</a>
+            <?php } ?>
+        </div>
+
+    <?php } ?>
+
+</section>
+
+<?php
+    require 'templates/footer.phtml';
+?>

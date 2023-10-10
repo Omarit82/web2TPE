@@ -1,8 +1,8 @@
 <?php
 
-require_once "app/discos.php";
-require_once "app/about.php";
-require_once "app/login.php";
+require_once "./app/controllers/discos.controller.php";
+require_once "./app/controllers/auth.controller.php";
+require_once "./app/controllers/about.controller.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -14,37 +14,21 @@ if (!empty( $_GET['action'])) {
 $params = explode('/', $action);
 
 switch ($params[0]) { // en la primer posicion tengo la accion real
-    case 'login':
-        if(isset($params[1])){
-            showLogin($params[1]);
-        }else{
-            showLogin(null);
-        }
-        break;
     case 'home':
-        if(isset($params[1])){
-            showDiscos($params[1]);
-        }else{
-            showDiscos(null);
-        }
+        $controller = new DiscosController();
+        $controller->showDiscos();
         break;
-    case 'add':
-        addDisco();
+    case 'login':
+        $controller = new AuthController();
+        $controller->showLogin();
         break;
-    case 'delete':
-        removeDisco($params[1]);
+    case 'auth':
+        $controller = new AuthController();
+        $controller->auth();
         break;
-    case 'mod':
-        modDisco($params[1]);
-        break;
-    case 'about': 
-        showAbout();
-        break;
-    case 'tienda':
-        checkLog();
-        break;
-    case 'filtro':
-        filtro();
+    case 'about':
+        $controller = new AboutController();
+        $controller->showAbout();
         break;
     default: 
         echo "404 - Page not found";
