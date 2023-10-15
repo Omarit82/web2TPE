@@ -1,6 +1,6 @@
 <?php
-    require 'templates/header.phtml';
-
+    require_once 'templates/header.phtml';
+    require_once 'templates/formFiltro.phtml';
 ?>
 
 <section>
@@ -13,7 +13,7 @@
                 (<?php echo $disco->genero ?>)  |  Precio: <?php echo $disco->precio?>
             </p>
             <img src="./img/disco-img.jpg" alt="">
-            <?php if(isset($user)&($user === 'admin')){ ?>   
+            <?php if(isset($user)&($user==='admin')){ ?>   
                 <a href="delete/<?php echo $disco->id?>" type="button" class="btn btn-danger">Borrar</a>
                 <a href="mod/<?php echo $disco->id?>" type="button" class="btn btn-primary">Modificar</a>
             <?php } ?>

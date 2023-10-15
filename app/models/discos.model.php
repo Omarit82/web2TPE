@@ -23,8 +23,6 @@ class discosModel{
         $query = $this->db->prepare('INSERT INTO discos(nombre,autor,genero,precio) VALUES (?,?,?,?)');
         $query->execute([$nombre,$autor,$genero,$precio]);
 
-        return $this->db->lastInsertId();
-
     }
 
     function deleteDisco($id){
@@ -38,6 +36,15 @@ class discosModel{
 
         $query = $this->db->prepare('UPDATE discos SET nombre = ?, autor = ?, genero = ?, precio = ? WHERE id = ?');
         $query->execute([$nombre,$autor,$genero,$precio,$id]);
+    }
+
+    public function getDiscosPorGen($genero){
+        $query = $this->db->prepare('SELECT * FROM discos WHERE genero = ?');
+        $query->execute([$genero]);
+
+        $discos = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $discos;
     }
 }
 

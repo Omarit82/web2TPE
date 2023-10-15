@@ -2,7 +2,7 @@
 
 class AuthView{
     public function showLogin(){
-        require './templates/login.phtml';
+        require_once './templates/login.phtml';
     }
 }
 

@@ -3,7 +3,7 @@
 class AboutView{
     public function showAbout(){
         
-        include_once 'templates/about.phtml';
+        require_once 'templates/about.phtml';
         
     }
 }
