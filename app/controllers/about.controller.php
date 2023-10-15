@@ -9,7 +9,7 @@ class AboutController{
 
     public function __construct(){
 
-        $this->view = new AboutView;
+        $this->view = new aboutView;
     }
 
     public function showAbout(){

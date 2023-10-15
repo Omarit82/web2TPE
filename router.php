@@ -3,6 +3,7 @@
 require_once "./app/controllers/discos.controller.php";
 require_once './app/controllers/filtroPorGen.controller.php';
 require_once "./app/controllers/about.controller.php";
+require_once "./app/controllers/login.controller.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -19,8 +20,8 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller->showDiscos();
         break;
     case 'login':
-        $controller = new LoginController;
-        $controller->showLogin();
+        $controller = new LoginController();
+        $controller->login();
         break;
     case 'logout':
         echo("falta hacer el logout");

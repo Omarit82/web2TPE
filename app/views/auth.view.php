@@ -5,5 +5,4 @@ class AuthView{
         require_once './templates/login.phtml';
     }
 }
-
 ?>

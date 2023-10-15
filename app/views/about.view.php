@@ -1,6 +1,6 @@
 <?php
 
-class AboutView{
+class aboutView{
     public function showAbout(){
         
         require_once 'templates/about.phtml';
