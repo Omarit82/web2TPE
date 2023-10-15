@@ -19,7 +19,8 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller->showDiscos();
         break;
     case 'login':
-        echo("ACA VA EL LOGIN");
+        $controller = new LoginController;
+        $controller->showLogin();
         break;
     case 'logout':
         echo("falta hacer el logout");
