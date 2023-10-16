@@ -9,12 +9,9 @@ class discosModel{
     }
 
     function getDiscos(){
-
         $query = $this->db->prepare('SELECT * FROM discos');
         $query->execute();
-
         $discos = $query->fetchAll(PDO::FETCH_OBJ);
-
         return $discos;
     }
 

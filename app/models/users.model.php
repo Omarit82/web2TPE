@@ -13,4 +13,11 @@ class UsersModel {
         $usuario = $query->fetch(PDO::FETCH_OBJ);
         return $usuario;
     }
+
+    public function getAllUsers(){
+        $query = $this->db->prepare('SELECT * FROM users');
+        $query->execute();
+        $usuarios = $query->fetchAll(PDO::FETCH_OBJ);
+        return $usuarios;
+    }
 } 

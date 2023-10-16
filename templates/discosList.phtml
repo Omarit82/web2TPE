@@ -6,7 +6,6 @@
 
 <section>
     <?php foreach($discos as $disco){?>
-        
         <div class="verDisco">
             <h3><?= $disco->nombre?></h3>
             <p>
@@ -16,7 +15,6 @@
             <img src="./img/disco-img.jpg" alt="">
             <?php if(isset($_SESSION['logueado'])&($_SESSION['logueado']->nivel ==='admin')){ ?>   
                 <a href="delete/<?= $disco->id?>" type="button" class="btn btn-danger">Borrar</a>
-                <a href="mod/<?= $disco->id?>" type="button" class="btn btn-primary">Modificar</a>
             <?php } ?>
             <?php if(isset($_SESSION)&($_SESSION['logueado']->nivel === 'user')){ ?>   
                 <a href="buy/<?= $disco->id?>" type="button" class="btn btn-success">Comprar</a>

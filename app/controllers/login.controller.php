@@ -10,8 +10,8 @@ class LoginController{
 
     public function __construct(){
 
-        $this->view = new LoginView;
-        $this->model = new UsersModel;
+        $this->view = new LoginView();
+        $this->model = new UsersModel();
     }
 
     public function autenticacion(){

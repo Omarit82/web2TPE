@@ -16,7 +16,9 @@
             <h1 class="col-12 text-center">Discos Musicales E-Comerce</h1>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <a class="navbar-brand" href="home">Home</a>
-                <a class="navbar-brand" href="categorias">Categorias</a>
+                <?php if(isset($_SESSION['logueado'])&&($_SESSION['logueado']->nivel == 'admin')){ ?>
+                <a class="navbar-brand" href="configuracion">Configuracion</a>
+                <?php } ?>
                 <a class="navbar-brand" href="about">About</a>
                 <?php if(isset($_SESSION['logueado'])){
                     ?><a class="navbar-brand" href="logout">Logout</a><?php

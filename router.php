@@ -3,6 +3,7 @@ require_once "./app/controllers/discos.controller.php";
 require_once './app/controllers/filtroPorGen.controller.php';
 require_once "./app/controllers/about.controller.php";
 require_once "./app/controllers/login.controller.php";
+require_once "./app/controllers/dataBase.controller.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -37,13 +38,9 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller = new DiscosController();
         $controller->removeDisco($params[1]);
         break;
-    case 'mod':
-        $controller = new DiscosController();
-        $controller->modDisco($params[1]);
-        break;
-    case 'add':
-        $controller = new DiscosController();
-        $controller->addDisco();
+    case 'configuracion':
+        $controller = new BaseController();
+        $controller->showDataBase();
         break;
     case 'filtro':
         $controller = new filtroPorGen();
