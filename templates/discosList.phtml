@@ -1,6 +1,7 @@
 <?php
     require_once 'templates/header.phtml';
     require_once 'templates/formFiltro.phtml';
+    require_once './config.php';
 ?>
 
 <section>
@@ -13,11 +14,11 @@
                 (<?= $disco->genero ?>)  |  Precio: <?= $disco->precio?>
             </p>
             <img src="./img/disco-img.jpg" alt="">
-            <?php if(isset($user)&($user ==='admin')){ ?>   
+            <?php if(isset($_SESSION['logueado'])&($_SESSION['logueado']->nivel ==='admin')){ ?>   
                 <a href="delete/<?= $disco->id?>" type="button" class="btn btn-danger">Borrar</a>
                 <a href="mod/<?= $disco->id?>" type="button" class="btn btn-primary">Modificar</a>
             <?php } ?>
-            <?php if(isset($user)&($user === 'user')){ ?>   
+            <?php if(isset($_SESSION)&($_SESSION['logueado']->nivel === 'user')){ ?>   
                 <a href="buy/<?= $disco->id?>" type="button" class="btn btn-success">Comprar</a>
             <?php } ?>
         </div>

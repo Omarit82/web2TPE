@@ -21,9 +21,9 @@ class LoginController{
         $password = $user->pass;
         if (password_verify($clave,$password)){
             $_SESSION['logueado'] = $user;
-            header('Location: ' . BASE_URL. '/home');
+            header('Location: ' . BASE_URL. 'home');
         } else {
-            echo "no verificado";
+            header('Location: ' . BASE_URL. 'login');
         }
         
     }
@@ -32,8 +32,7 @@ class LoginController{
     }
     public function logout(){
         session_destroy();
-        header('Location: ' . BASE_URL);
-
+        header('Location: '. BASE_URL);
     }
 
 }
