@@ -17,7 +17,6 @@ class DiscosController{
 
     public function showDiscos(){
         $discos = $this->model->getDiscos();
-
         $this->view->showDiscos($discos);
     }
 

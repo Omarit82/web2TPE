@@ -1,5 +1,4 @@
 <?php
-
 require_once "./app/controllers/discos.controller.php";
 require_once './app/controllers/filtroPorGen.controller.php';
 require_once "./app/controllers/about.controller.php";
@@ -11,7 +10,6 @@ $action = 'home'; // accion por defecto
 if (!empty( $_GET['action'])) {
     $action = $_GET['action'];
 }
-
 $params = explode('/', $action);
 
 switch ($params[0]) { // en la primer posicion tengo la accion real
@@ -27,7 +25,8 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         echo("falta hacer el logout");
         break;  
     case 'auth':
-        echo("falta autenticar");
+        $controller = new AuthController();
+        $controller->autenticacion();
         break;
     case 'about':
         $controller = new AboutController();
