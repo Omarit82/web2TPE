@@ -25,7 +25,7 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         echo("falta hacer el logout");
         break;  
     case 'auth':
-        $controller = new AuthController();
+        $controller = new LoginController();
         $controller->autenticacion();
         break;
     case 'about':
