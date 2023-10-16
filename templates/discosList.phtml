@@ -13,7 +13,7 @@
                 (<?= $disco->genero ?>)  |  Precio: <?= $disco->precio?>
             </p>
             <img src="./img/disco-img.jpg" alt="">
-            <?php if(isset($user)&($user==='admin')){ ?>   
+            <?php if(isset($user)&($user ==='admin')){ ?>   
                 <a href="delete/<?= $disco->id?>" type="button" class="btn btn-danger">Borrar</a>
                 <a href="mod/<?= $disco->id?>" type="button" class="btn btn-primary">Modificar</a>
             <?php } ?>

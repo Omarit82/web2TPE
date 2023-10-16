@@ -7,11 +7,10 @@ class UsersModel {
         $this->db = new PDO('mysql:host=localhost;dbname=comercio_discos;charset=utf8','root','');
     }
     
-    public function getUser($user,$clave){
-        $query = $this->db->prepare('SELECT * FROM users WHERE email = ? and password = ?');
-        $query->execute([$user,$clave]);
-        $usuario = $query->fetchAll(PDO::FETCH_OBJ);
-        
+    public function getUser($user){
+        $query = $this->db->prepare('SELECT * FROM users WHERE email = ?');
+        $query->execute([$user]);
+        $usuario = $query->fetch(PDO::FETCH_OBJ);
         return $usuario;
     }
 } 

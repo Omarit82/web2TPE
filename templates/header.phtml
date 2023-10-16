@@ -18,8 +18,11 @@
                 <a class="navbar-brand" href="home">Home</a>
                 <a class="navbar-brand" href="categorias">Categorias</a>
                 <a class="navbar-brand" href="about">About</a>
-                <a class="navbar-brand" href="login">Login</a>
-                <a class="navbar-brand" href="logout">Logout</a>
+                <?php if(isset($_SESSION['logueado'])){
+                    ?><a class="navbar-brand" href="logout">Logout</a><?php
+                } else { 
+                    ?><a class="navbar-brand" href="login">Login</a><?php
+                }?>
             </nav>  
         </nav>
     </header>
