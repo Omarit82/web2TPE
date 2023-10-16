@@ -34,9 +34,9 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller = new AboutController();
         $controller->showAbout();
         break;
-    case 'delete':
+    case 'add':
         $controller = new DiscosController();
-        $controller->removeDisco($params[1]);
+        $controller->addDisco();
         break;
     case 'configuracion':
         $controller = new BaseController();

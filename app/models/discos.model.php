@@ -1,11 +1,12 @@
 <?php
+require_once './config.php';
 
 class discosModel{
     
     private $db;
 
     public function __construct(){
-        $this->db = new PDO('mysql:host=localhost;dbname=comercio_discos;charset=utf8','root','');
+        $this->db = new PDO("mysql:host=".MYSQL_HOST.";dbname=".MYSQL_DB.";charset=utf8",MYSQL_USER,MYSQL_PASS);
     }
 
     function getDiscos(){
@@ -16,10 +17,9 @@ class discosModel{
     }
 
     function insertDisco($nombre,$autor,$genero,$precio){
-
+        
         $query = $this->db->prepare('INSERT INTO discos(nombre,autor,genero,precio) VALUES (?,?,?,?)');
         $query->execute([$nombre,$autor,$genero,$precio]);
-
     }
 
     function deleteDisco($id){

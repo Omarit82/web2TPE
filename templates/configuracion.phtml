@@ -1,23 +1,26 @@
 <?php require_once 'templates/header.phtml'?>
-    <div class="about tarjeta">
+    <div class="verDisco">
         <ul>
             <?php foreach ($usuarios as $item) { ?>
-                <li><?= $item->email?> | <?= $item->nivel ?> | <button>Eliminar</button> </li>    
+                <li><?= $item->email?> | <?= $item->nivel ?> </li>    
            <?php }?>
         </ul>
     </div>
-    <div class="about tarjeta">
+    <div class="verDisco">
         <ul>
             <?php foreach ($generos as $genero) { ?>
-                <li><?= $genero->genero?> | <button>Eliminar</button> </li>    
+                <li><?= $genero->genero?> | </li>    
            <?php }?>
         </ul>
     </div>
-    <div class="about tarjeta">
+    <div class="verDisco">
         <ul>
             <?php foreach ($discos as $disco) { ?>
-                <li><?= $disco->nombre?> | <?= $disco->autor?> | <?= $disco->genero?> | <?= $disco->precio?> | <button>Eliminar</button> </li>    
+                <li><?= $disco->nombre?> | <?= $disco->autor?> | <?= $disco->genero?> | <?= $disco->precio?> | </li>    
            <?php }?>
         </ul>
     </div>
-<?php require_once 'templates/footer.phtml'?>
+    
+<?php 
+require_once 'templates/formAdd.phtml';
+require_once 'templates/footer.phtml'?>
