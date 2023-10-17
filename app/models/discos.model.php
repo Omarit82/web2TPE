@@ -15,6 +15,12 @@ class discosModel{
         $discos = $query->fetchAll(PDO::FETCH_OBJ);
         return $discos;
     }
+    function getDisco($id){
+        $query = $this->db->prepare('SELECT * FROM discos WHERE id = ?');
+        $query->execute([$id]);
+        $discos = $query->fetch(PDO::FETCH_OBJ);
+        return $discos;
+    }
 
     function insertDisco($nombre,$autor,$genero,$precio){
         

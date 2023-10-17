@@ -16,7 +16,7 @@ $params = explode('/', $action);
 switch ($params[0]) { // en la primer posicion tengo la accion real
     case 'home':
         $controller = new DiscosController();
-        $controller->showDiscos();
+        $controller->showDiscos(null);
         break;
     case 'login':
         $controller = new LoginController();
@@ -41,6 +41,10 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
     case 'configuracion':
         $controller = new BaseController();
         $controller->showDataBase();
+        break;
+    case 'buy':
+        $controller = new DiscosController();
+        $controller->showDiscos($params[1]);
         break;
     case 'filtro':
         $controller = new filtroPorGen();

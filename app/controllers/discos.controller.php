@@ -15,26 +15,20 @@ class DiscosController{
 
     }
 
-    public function showDiscos(){
+    public function showDiscos($id){
         $discos = $this->model->getDiscos();
-        $this->view->showDiscos($discos);
+        if ($id == null){
+            $this->view->showDiscos($discos);
+        }else{
+            $disco = $this->model->getDisco($id);
+            $this->view->showDisco($disco);
+        }
+        
     }
 
     public function removeDisco($id){
         $this->model->deleteDisco($id);
         header('Location: ' . BASE_URL);
-    }
-
-    public function modDisco($id){
-        $nombre = $_POST['titulo'];
-        $autor = $_POST['autor'];
-        $genero = $_POST['genero'];
-        $precio = $_POST['precio'];
-        
-        $this->model->updateDisco($nombre,$autor,$genero,$precio,$id);
-
-        header('Location: ' . BASE_URL);
-
     }
 
     public function addDisco(){
