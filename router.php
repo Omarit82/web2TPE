@@ -50,6 +50,10 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller = new filtroPorGen();
         $controller->showGeneros();
         break;
+    case 'delete':
+        $controller = new DiscosController();
+        $controller->removeDisco($params[1]);
+    break;
     default: 
         echo "404 - Page not found";
         break;
