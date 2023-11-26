@@ -37,7 +37,7 @@ class discosModel{
     }
 
     public function getDiscosPorGen($genero){
-        $query = $this->db->prepare('SELECT * FROM discos WHERE genero = ?');
+        $query = $this->db->prepare('SELECT * FROM discos WHERE genero_id = ?');
         $query->execute([$genero]);
 
         $discos = $query->fetchAll(PDO::FETCH_OBJ);

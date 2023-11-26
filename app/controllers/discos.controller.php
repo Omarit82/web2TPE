@@ -17,6 +17,8 @@ class DiscosController{
 
     public function showDiscos($id){
         $discos = $this->model->getDiscos();
+        /**ADD */
+        //$generos = $this->model->getCategorias();
         if ($id == null){
             $this->view->showDiscos($discos);
         }else{

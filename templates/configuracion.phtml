@@ -11,7 +11,7 @@
     <h2>Generos:</h2>
         <ul>
             <?php foreach ($generos as $genero) { ?>
-                <li><?= $genero->genero?> | </li>    
+                <li><?= $genero->nombre?> | </li>    
            <?php }?>
         </ul>
     </div>
@@ -19,7 +19,7 @@
     <h2>Discos:</h2>
         <ul>
             <?php foreach ($discos as $disco) { ?>
-                <li><?= $disco->nombre?> | <?= $disco->autor?> | <?= $disco->genero?> | <?= $disco->precio?> | </li>    
+                <li><?= $disco->nombre?> | <?= $disco->autor_id?> | <?= $disco->genero_id?> | <?= $disco->precio?> | </li>    
            <?php }?>
         </ul>
     </div>
