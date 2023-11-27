@@ -3,7 +3,7 @@ class configView{
     public function showConfig($usuarios,$discos,$generos){
         
         require_once 'templates/header.phtml'?>
-        <div class="verDisco">
+        <div class="container verDisco">
             <h2>Usuarios:</h2>
             <ul>
                 <?php foreach ($usuarios as $item) { ?>
@@ -11,7 +11,7 @@ class configView{
             <?php }?>
             </ul>
         </div>
-        <div class="verDisco">
+        <div class="container verDisco">
         <?php require_once 'templates/formGenero.phtml' ?>
         <h2>Generos:</h2>
             <ul>
@@ -21,7 +21,7 @@ class configView{
             </ul>
             <?php require_once 'templates/formAutor.phtml' ?>
         </div>
-        <div class="verDisco">
+        <div class="container verDisco">
         <h2>Discos:</h2>
             <ul>
                 <?php foreach ($discos as $disco) { ?>

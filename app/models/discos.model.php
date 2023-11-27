@@ -18,6 +18,25 @@ class discosModel{
         return $discos;
     }
 
+    public function orderDiscosTitulo(){
+        $query = $this->db->prepare('SELECT discos.id, autor.nombre, genero.categoria, discos.titulo, discos.precio FROM discos INNER JOIN autor ON discos.autor_id = autor.id INNER JOIN genero ON discos.genero_id = genero.id ORDER BY discos.titulo');
+        $query->execute();
+        $discos = $query->fetchAll(PDO::FETCH_OBJ);
+        return $discos;
+    }
+    public function orderDiscosAutor(){
+        $query = $this->db->prepare('SELECT discos.id, autor.nombre, genero.categoria, discos.titulo, discos.precio FROM discos INNER JOIN autor ON discos.autor_id = autor.id INNER JOIN genero ON discos.genero_id = genero.id ORDER BY autor.nombre');
+        $query->execute();
+        $discos = $query->fetchAll(PDO::FETCH_OBJ);
+        return $discos;
+    }
+    public function orderDiscosPrecio(){
+        $query = $this->db->prepare('SELECT discos.id, autor.nombre, genero.categoria, discos.titulo, discos.precio FROM discos INNER JOIN autor ON discos.autor_id = autor.id INNER JOIN genero ON discos.genero_id = genero.id ORDER BY discos.precio');
+        $query->execute();
+        $discos = $query->fetchAll(PDO::FETCH_OBJ);
+        return $discos;
+    }
+
     public function getDisco($id){
         $query = $this->db->prepare('SELECT discos.id, autor.nombre, genero.categoria, discos.titulo, discos.precio FROM discos INNER JOIN autor ON discos.autor_id = autor.id INNER JOIN genero ON discos.genero_id = genero.id  WHERE discos.id = ?');
         $query->execute([$id]);

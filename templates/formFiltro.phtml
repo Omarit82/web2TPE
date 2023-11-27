@@ -1,6 +1,11 @@
 <?php 
 require_once './app/models/generos.model.php'; ?>
-
+<div>
+    <h3 class="ms-5">Ordenar por:</h3> 
+    <a href="orderTitulo" class="btn btn-success boton ms-5" >Titulo</a>
+    <a href="orderAutor" class="btn btn-success boton" >Autor</a>
+    <a href="orderPrecio" class="btn btn-success boton" >Precio</a>
+</div>
 
 <form action="filtro" method="POST" class="mb-3 formulario">
     <?php 

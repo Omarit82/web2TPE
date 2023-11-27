@@ -28,6 +28,19 @@ class filtro{
 
         $this->view->showDiscos($autores);
     }
+
+    public function showPorTitulo(){
+        $discos = $this->model->orderDiscosTitulo();
+        $this->view->showDiscos($discos);
+    }
+    public function showPorAutor(){
+        $discos = $this->model->orderDiscosAutor();
+        $this->view->showDiscos($discos);
+    }
+    public function showPorPrecio(){
+        $discos = $this->model->orderDiscosPrecio();
+        $this->view->showDiscos($discos);
+    }
 }
 
 ?>

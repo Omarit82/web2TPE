@@ -49,6 +49,7 @@ class discosView{
         </div><?php
         require_once 'templates/footer.phtml';
     }
+
     public function modificarDisco($disco){
         //mostrar disco a modificar
         require_once 'templates/header.phtml';

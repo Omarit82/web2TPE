@@ -62,6 +62,18 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller = new filtro();
         $controller->showAutores();
         break;
+    case 'orderTitulo':
+        $controller = new filtro();
+        $controller->showPorTitulo();
+        break;
+    case 'orderAutor':
+        $controller = new filtro();
+        $controller->showPorAutor();
+        break;
+    case 'orderPrecio':
+        $controller = new filtro();
+        $controller->showPorPrecio();
+        break;
     case 'delete':
         $controller = new DiscosController();
         $controller->removeDisco($params[1]);
