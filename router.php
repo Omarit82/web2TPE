@@ -78,6 +78,18 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller = new DiscosController();
         $controller->removeDisco($params[1]);
         break;
+    case 'deleteGen':
+        $controller = new ConfigController();
+        $controller->removeGenero($params[1]);
+        break;
+    case 'modificarGen':
+        $controller = new ConfigController();
+        $controller->modificarGenero($params[1]);
+        break;
+    case 'updateGenero':
+        $controller = new ConfigController();
+        $controller->updateGenero($params[1]);
+        break;
     case 'modificar':
         $controller = new DiscosController();
         $controller->modificarDisco($params[1]);

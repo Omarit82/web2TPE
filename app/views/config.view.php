@@ -21,7 +21,7 @@ class configView{
         <h2>Generos:</h2>
             <ul class="list-group">
                 <?php foreach ($generos as $genero) { ?>
-                    <li class="list-group-item"><?= $genero->categoria?></li>    
+                    <li class="list-group-item"><?= $genero->categoria?> <a href="deleteGen/<?= $genero->id?>" type="button" class="btn btn-danger ms-5">Borrar</a><a href="modificarGen/<?= $genero->id?>" type="button" class="btn btn-success ms-5">Modificar</a></li> 
             <?php }?>
             </ul>
             <?php require_once 'templates/formAutor.phtml' ?>
@@ -48,10 +48,21 @@ class configView{
             </ul>
         </div>
         
-    <?php 
-    require_once 'templates/formAdd.phtml';
-    require_once 'templates/footer.phtml';
-        
+        <?php 
+        require_once 'templates/formAdd.phtml';
+        require_once 'templates/footer.phtml';   
+    }
+    public function modificarGenero($genero){
+        require_once 'templates/header.phtml'; ?>
+            <form class="mb-3 formulario" action="updateGenero" method="POST">
+                <h2>Editar Genero:</h2>
+                <label class="form-label  mt-2">Id</label>
+                <input  class="form-control" required type="number"name="id" value="<?= $genero->id ?>">
+                <label class="form-label  mt-2">Genero</label>
+                <input class="form-control" required type="text" name="categoria" value="<?= $genero->categoria ?>">
+                <button type="submit" class="btn btn-primary boton mt-3" >Enviar</button>
+            </form><?php
+        require_once 'templates/footer.phtml';  
     }
 }
 

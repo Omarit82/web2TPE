@@ -37,6 +37,22 @@ class ConfigController{
         $this->genModel->insertGenero($categoria);
         header('Location: ' . BASE_URL . '/configuracion');
     }
+    public function removeGenero($id){
+        $this->genModel->deleteGenero($id);
+        header('Location: ' . BASE_URL . '/configuracion');
+    }
+    public function modificarGenero($id){ //Trae el genero para modificar
+        $genero =  $this->genModel->modificarGenero($id);
+        $this->view->modificarGenero($genero); //Lo envio a la vista.
+    }
+
+    public function updateGenero(){
+        $id = $_POST['id'];
+        $categoria = $_POST['categoria'];
+
+        $this->genModel->updateGenero($id,$categoria);
+        header('Location: ' . BASE_URL . '/configuracion');
+    }
 
     public function addAutor(){
         
