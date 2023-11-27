@@ -25,6 +25,15 @@ class discosModel{
         return $discos;
     }
 
+    public function modificarDisco($id){
+        // Primero lo tengo que traer de la db y cargarlo a un form. Y desde ahi ejecutar el update
+        $query = $this->db->prepare('SELECT * FROM discos WHERE id = ?');
+        $query->execute([$id]);
+        $disco = $query->fetch(PDO::FETCH_OBJ);
+
+        return $disco;
+    }
+
     public function insertDisco($autor,$genero,$titulo,$precio){
         
         $query = $this->db->prepare('INSERT INTO discos(autor_id,genero_id,titulo,precio) VALUES (?,?,?,?)');
@@ -45,6 +54,10 @@ class discosModel{
         $discos = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $discos;
+    }
+    public function updateDisco($id,$autor,$genero,$titulo,$precio){
+        $query = $this->db->prepare('UPDATE discos SET autor_id=?, genero_id= ?, titulo = ?, precio = ? WHERE id = ?');
+        $query->execute([$autor,$genero,$titulo,$precio,$id]);
     }
     
     function deploy() {

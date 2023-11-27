@@ -62,6 +62,14 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller = new DiscosController();
         $controller->removeDisco($params[1]);
     break;
+    case 'modificar':
+        $controller = new DiscosController();
+        $controller->modificarDisco($params[1]);
+    break;
+    case 'update':
+        $controller = new DiscosController();
+        $controller->updateDisco();
+    break;
     default: 
         echo "404 - Page not found";
         break;

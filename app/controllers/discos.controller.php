@@ -33,6 +33,22 @@ class DiscosController{
         header('Location: ' . BASE_URL);
     }
 
+    public function modificarDisco($id){
+        $disco = $this->model->modificarDisco($id);
+        $this->view->modificarDisco($disco);
+    }
+
+    public function updateDisco(){
+        $id = $_POST['id'];
+        $titulo = $_POST['titulo'];
+        $autor = $_POST['autor'];
+        $genero = $_POST['genero'];
+        $precio = $_POST['precio'];
+
+        $this->model->updateDisco($id,$autor,$genero,$titulo,$precio);
+        header('Location: ' . BASE_URL . '/home');
+    }
+
     public function addDisco(){
         
         $titulo = $_POST['titulo'];
