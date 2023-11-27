@@ -16,4 +16,9 @@ class GenerosModel{
 
         return $generos;
     }
+
+    public function insertGenero($categoria){
+        $query = $this->db->prepare('INSERT INTO genero(categoria) VALUES (?)');
+        $query->execute([$categoria]);
+    }
 }

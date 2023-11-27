@@ -1,0 +1,9 @@
+<?php
+require_once './app/models/autores.model.php'; 
+?>
+<form class="mb-3 formulario" action="addAutor" method="POST">
+    <h2>Agregar Nuevo Autor:</h2>
+    <label class="form-label  mt-2">Autor</label>
+    <input class="form-control" required type="text" name="nombre" placeholder="Nombre">
+    <button type="submit" class="btn btn-primary boton mt-3" >Enviar</button>
+</form>

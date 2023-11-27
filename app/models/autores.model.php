@@ -16,4 +16,9 @@ class AutoresModel{
 
         return $autor;
     }
+
+    public function insertAutor($nombre){
+        $query = $this->db->prepare('INSERT INTO autor(nombre) VALUES (?)');
+        $query->execute([$nombre]);
+    }
 }

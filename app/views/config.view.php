@@ -1,5 +1,5 @@
 <?php
-class dataBaseView{
+class configView{
     public function showConfig($usuarios,$discos,$generos){
         
         require_once 'templates/header.phtml'?>
@@ -12,13 +12,14 @@ class dataBaseView{
             </ul>
         </div>
         <div class="verDisco">
-        
+        <?php require_once 'templates/formGenero.phtml' ?>
         <h2>Generos:</h2>
             <ul>
                 <?php foreach ($generos as $genero) { ?>
-                    <li><?= $genero->categoria?> | </li>    
+                    <li><?= $genero->categoria?></li>    
             <?php }?>
             </ul>
+            <?php require_once 'templates/formAutor.phtml' ?>
         </div>
         <div class="verDisco">
         <h2>Discos:</h2>
