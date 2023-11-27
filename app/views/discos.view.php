@@ -11,12 +11,17 @@ class discosView{
             <?php foreach($discos as $disco){?>
                 <div class="verDisco">
                     <h3><?= $disco->titulo?></h3>
-                    <p>
-                        Autor: <?= $disco->nombre ?>  
-                        (<?=
-                        $id = $disco->categoria
-                        ?>)  |  Precio: <?= $disco->precio?>
-                    </p>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Artista: <?= $disco->nombre ?>
+                        </li>  
+                        <li class="list-group-item">
+                            (<?= $id = $disco->categoria ?>)
+                        </li>
+                        <li class="list-group-item mb-3">
+                            Precio: <?= $disco->precio?>
+                        </li>  
+                    </ul>
                     <img src="./img/disco-img.jpg" alt="">
                     <?php if(isset($_SESSION['logueado'])&&($_SESSION['logueado']->nivel ==='admin')){ ?>   
                         <a href="delete/<?= $disco->id?>" type="button" class="btn btn-danger">Borrar</a>
@@ -38,10 +43,17 @@ class discosView{
         ?>
         <div class="verDisco">
             <h3><?= $disco->titulo?></h3>
-            <p>
-                Autor: <?= $disco->nombre ?>  
-                (<?= $disco->categoria ?>)  |  Precio: <?= $disco->precio?>
-            </p>
+            <ul class="list-group">
+                        <li class="list-group-item">
+                            Artista: <?= $disco->nombre ?>
+                        </li>  
+                        <li class="list-group-item">
+                            (<?= $id = $disco->categoria ?>)
+                        </li>
+                        <li class="list-group-item mb-3">
+                            Precio: <?= $disco->precio?>
+                        </li>  
+                    </ul>
             <img src="./img/disco-img.jpg" alt="">
             <?php if(isset($_SESSION)&($_SESSION['logueado']->nivel === 'user')){ ?>   
                 <a href="" type="button" class="btn btn-success">Comprar</a>
@@ -55,11 +67,17 @@ class discosView{
         require_once 'templates/header.phtml';
         ?>
         <div class="verDisco">
-            <h3>ID: <?= $disco->id ?></h3>
-            <h3>TITULO: <?= $disco->titulo ?></h3>
-            <p>
-                PRECIO: <?= $disco->precio?>
-            </p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    ID: <?= $disco->id ?>
+                </li>  
+                <li class="list-group-item">
+                    Titulo: <?= $disco->titulo ?>
+                </li>  
+                <li class="list-group-item mb-3">
+                    Precio: <?= $disco->precio?>
+                </li>  
+            </ul>
             <img src="./img/disco-img.jpg" alt="">
         </div>
         <div class="container">

@@ -10,3 +10,19 @@ Descripcion: La pagina muestra al inicio los discos que posee la tienda, en caso
 El filtro de busqueda genera los posibles generos obteniendolos de la db generos.
 
 El diagrama DER se encuentra adjuntado como pdf.
+
+USUARIOS Y CLAVES: 
+
+El guest permite ingresar a comprar
+guest@email.com
+9876
+
+Los administradores tienen acceso a configuracion, carga y modificaciones.
+webadmin
+admin
+
+omar@email.com
+1234
+
+matias@email.com
+1234

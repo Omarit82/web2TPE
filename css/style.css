@@ -46,3 +46,8 @@ h3 {
 .boton {
     margin:10px auto 10px;
 }
+
+.list-group-item {
+    min-width: 25%;
+    min-height: 15px;
+}
