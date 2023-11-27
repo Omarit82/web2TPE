@@ -3,7 +3,7 @@
 require_once './app/models/discos.model.php';
 require_once './app/views/discos.view.php';
 
-class filtroPorGen{
+class filtro{
 
     private $model;
     private $view;
@@ -19,6 +19,14 @@ class filtroPorGen{
         $generos = $this->model->getDiscosPorGen($genero);
 
         $this->view->showDiscos($generos);
+    }
+
+    public function showAutores(){
+        $autor = $_POST['nombre'];
+
+        $autores = $this->model->getDiscosPorAutor($autor);
+
+        $this->view->showDiscos($autores);
     }
 }
 

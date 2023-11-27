@@ -4,6 +4,7 @@ class discosView{
     public function showDiscos($discos){
         require_once 'templates/header.phtml';
         require_once 'templates/formFiltro.phtml';
+        require_once 'templates/formFiltroAutor.phtml';
         require_once 'config.php';
         ?>
         <section>

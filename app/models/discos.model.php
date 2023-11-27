@@ -55,6 +55,15 @@ class discosModel{
 
         return $discos;
     }
+
+    public function getDiscosPorAutor($autor){
+        $query = $this->db->prepare('SELECT discos.id, autor.nombre, genero.categoria, discos.titulo, discos.precio FROM discos INNER JOIN autor ON discos.autor_id = autor.id INNER JOIN genero ON discos.genero_id = genero.id  WHERE autor_id = ?');
+        $query->execute([$autor]);
+
+        $discos = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $discos;
+    }
     public function updateDisco($id,$autor,$genero,$titulo,$precio){
         $query = $this->db->prepare('UPDATE discos SET autor_id=?, genero_id= ?, titulo = ?, precio = ? WHERE id = ?');
         $query->execute([$autor,$genero,$titulo,$precio,$id]);
@@ -71,7 +80,7 @@ class discosModel{
             SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
             START TRANSACTION;
             SET time_zone = "+00:00";
-
+            
 
             /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
             /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -173,10 +182,10 @@ class discosModel{
             --
 
             INSERT INTO `users` (`id`, `email`, `pass`, `nivel`) VALUES
-            (1, 'omar@email.com', '$2y$10$'Ok1SIqiVKjesOXh/uUHKge/F9LFvFTqhpu8hdnBfxZ7iRqItW1Dou', 'admin'),  
-            (2, 'matias@email.com', '$2y$10$'NqrD5XR954nuZPsfs8rRzeOBVAdBLfEVaYj2gHFVaNPpCOLJjxDC.', 'admin'),
-            (3, 'guest@email.com', '$2y$10$'a2R1d1falFvRJc0hm0knWeZygzcgHnpXXQ2FtjWy59Ny5jJ8D9jhW', 'user'),
-            (4, 'webadmin', '$2y$10$'b095X3XhrDjPwzbj3BgwiuN.1RyATcDddARL7yxi5.pBuLItt4w9K', 'admin');
+            (1, 'omar@email.com', '$2y$10\$Ok1SIqiVKjesOXh/uUHKge/F9LFvFTqhpu8hdnBfxZ7iRqItW1Dou', 'admin'),  
+            (2, 'matias@email.com', '$2y$10\$NqrD5XR954nuZPsfs8rRzeOBVAdBLfEVaYj2gHFVaNPpCOLJjxDC.', 'admin'),
+            (3, 'guest@email.com', '$2y$10\$a2R1d1falFvRJc0hm0knWeZygzcgHnpXXQ2FtjWy59Ny5jJ8D9jhW', 'user'),
+            (4, 'webadmin', '$2y$10\$b095X3XhrDjPwzbj3BgwiuN.1RyATcDddARL7yxi5.pBuLItt4w9K', 'admin');
 
             --
             -- Índices para tablas volcadas

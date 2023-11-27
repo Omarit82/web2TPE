@@ -1,6 +1,6 @@
 <?php
 require_once "./app/controllers/discos.controller.php";
-require_once './app/controllers/filtroPorGen.controller.php';
+require_once './app/controllers/filtro.controller.php';
 require_once "./app/controllers/about.controller.php";
 require_once "./app/controllers/login.controller.php";
 require_once "./app/controllers/config.controller.php";
@@ -55,21 +55,25 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller->showDiscos($params[1]);
         break;
     case 'filtro':
-        $controller = new filtroPorGen();
+        $controller = new filtro();
         $controller->showGeneros();
+        break;
+    case 'filtroAutor':
+        $controller = new filtro();
+        $controller->showAutores();
         break;
     case 'delete':
         $controller = new DiscosController();
         $controller->removeDisco($params[1]);
-    break;
+        break;
     case 'modificar':
         $controller = new DiscosController();
         $controller->modificarDisco($params[1]);
-    break;
+        break;
     case 'update':
         $controller = new DiscosController();
         $controller->updateDisco();
-    break;
+        break;
     default: 
         echo "404 - Page not found";
         break;

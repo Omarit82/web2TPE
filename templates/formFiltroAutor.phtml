@@ -1,0 +1,17 @@
+<?php 
+require_once './app/models/autores.model.php'; ?>
+
+<form action="filtroAutor" method="POST" class="mb-3 formulario">
+    <?php 
+    $model = new AutoresModel();
+    $autores=$model->getAutores(); 
+    ?>
+    <label> Filtrar por Autor </label>
+    <select name="nombre" class="form-select">
+        <option  value="" selected></option>
+        <?php foreach ($autores as $autor) { ?>
+           <option value="<?= $autor->id?>"><?= $autor->nombre?></option>;<?php
+        }?>
+    </select>
+    <button type="submit" class="btn btn-info boton">Filtrar</button>
+</form>
