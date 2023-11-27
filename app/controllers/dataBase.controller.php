@@ -18,12 +18,12 @@ class BaseController{
         $this->view = new dataBaseView();
     }
 
-    public function showDataBase(){
+    public function showConfig(){
         $usuarios = $this->usModel->getAllUsers();
         $discos = $this->model->getDiscos();
         $generos = $this->genModel->getCategorias();
         
-        $this->view->showDBase($usuarios,$discos,$generos);
+        $this->view->showConfig($usuarios,$discos,$generos);
     }
 
 }

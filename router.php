@@ -40,7 +40,7 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         break;
     case 'configuracion':
         $controller = new BaseController();
-        $controller->showDataBase();
+        $controller->showConfig();
         break;
     case 'buy':
         $controller = new DiscosController();

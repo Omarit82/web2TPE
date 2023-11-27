@@ -11,13 +11,13 @@ class discosModel{
     }
 
     public function getDiscos(){
-        $query = $this->db->prepare('SELECT * FROM discos');
+        $query = $this->db->prepare('SELECT discos.id, autor.nombre, genero.categoria, discos.titulo, discos.precio FROM discos INNER JOIN autor ON discos.autor_id = autor.id INNER JOIN genero ON discos.genero_id = genero.id' );
         $query->execute();
         $discos = $query->fetchAll(PDO::FETCH_OBJ);
         return $discos;
     }
     public function getDisco($id){
-        $query = $this->db->prepare('SELECT * FROM discos WHERE id = ?');
+        $query = $this->db->prepare('SELECT discos.id, autor.nombre, genero.categoria, discos.titulo, discos.precio FROM discos INNER JOIN autor ON discos.autor_id = autor.id INNER JOIN genero ON discos.genero_id = genero.id  WHERE discos.id = ?');
         $query->execute([$id]);
         $discos = $query->fetch(PDO::FETCH_OBJ);
         return $discos;
