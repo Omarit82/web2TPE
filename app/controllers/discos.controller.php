@@ -35,14 +35,13 @@ class DiscosController{
 
     public function addDisco(){
         
-        $nombre = $_POST['titulo'];
+        $titulo = $_POST['titulo'];
         $autor = $_POST['autor'];
         $genero = $_POST['genero'];
         $precio = $_POST['precio'];
-       
-        $this->model->insertDisco($nombre,$autor,$genero,$precio);
+
+        $this->model->insertDisco($autor,$genero,$titulo,$precio);
         header('Location: ' . BASE_URL . '/configuracion');
-        die();
     }
 }
 

@@ -12,6 +12,7 @@ class dataBaseView{
             </ul>
         </div>
         <div class="verDisco">
+        
         <h2>Generos:</h2>
             <ul>
                 <?php foreach ($generos as $genero) { ?>

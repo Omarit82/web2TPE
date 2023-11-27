@@ -1,18 +1,39 @@
-
+<?php
+require_once './app/models/generos.model.php'; 
+require_once './app/models/autores.model.php'; 
+?>
 <form class="mb-3 formulario" action="add" method="POST">
     <h2>Agregar Disco:</h2>
-    <label class="form-label">Titulo</label>
+    <label class="form-label  mt-2">Titulo</label>
     <input class="form-control" required type="text" name="titulo" placeholder="titulo">
 
-    <label class="form-label">Autor</label>
-    <input class="form-control" required type="text" name="autor" placeholder="autor">
+    <?php 
+    $model = new GenerosModel();
+    $generos=$model->getCategorias(); 
+    ?>
+    <label class="form-label mt-2">Genero</label>
+    <select name="genero" class="form-select">
+        <option  value="" selected></option>
+        <?php foreach ($generos as $genero) { ?>
+           <option value=<?= $genero->id?>><?= $genero->categoria?></option>;<?php
+        }?>
+    </select>
 
-    <label class="form-label">Genero</label>
-    <input class="form-control" required type="text" name="genero" placeholder="genero">
+    <?php 
+    $model = new AutoresModel();
+    $autores=$model->getAutores(); 
+    ?>
+    <label class="form-label mt-2">Autor</label>
+    <select name="autor" class="form-select">
+        <option  value="" selected></option>
+        <?php foreach ($autores as $autor) { ?>
+           <option value=<?= $autor->id?>><?=$autor->nombre?></option>;<?php
+        }?>
+    </select>
 
-    <label class="form-label">Precio</label>
+    <label class="form-label  mt-2">Precio</label>
     <input class="form-control" required type="float" name="precio" placeholder="precio">
 
-    <button type="submit">Enviar</button>
+    <button type="submit" class="btn btn-primary boton mt-5" >Enviar</button>
 
 </form>

@@ -24,9 +24,10 @@ class discosModel{
         return $discos;
     }
 
-    public function insertDisco($nombre,$autor,$genero,$precio){
-        $query = $this->db->prepare('INSERT INTO discos(nombre,autor,genero,precio) VALUES (?,?,?,?)');
-        $query->execute([$nombre,$autor,$genero,$precio]);
+    public function insertDisco($autor,$genero,$titulo,$precio){
+        
+        $query = $this->db->prepare('INSERT INTO discos(autor_id,genero_id,titulo,precio) VALUES (?,?,?,?)');
+        $query->execute([$autor,$genero,$titulo,$precio]);
     
     }
 

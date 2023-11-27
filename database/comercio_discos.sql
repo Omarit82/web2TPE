@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 26, 2023 at 05:16 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 27-11-2023 a las 03:48:39
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `comercio_discos`
+-- Base de datos: `comercio_discos`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `autor`
+-- Estructura de tabla para la tabla `autor`
 --
 
 CREATE TABLE `autor` (
@@ -33,7 +33,7 @@ CREATE TABLE `autor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `autor`
+-- Volcado de datos para la tabla `autor`
 --
 
 INSERT INTO `autor` (`id`, `nombre`) VALUES
@@ -43,48 +43,52 @@ INSERT INTO `autor` (`id`, `nombre`) VALUES
 (4, 'AC-DC'),
 (5, 'Led Zeppelin'),
 (6, 'Soda Stereo'),
-(7, 'Eric Clapton');
+(7, 'Eric Clapton'),
+(8, 'Leo Mattioli');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `discos`
+-- Estructura de tabla para la tabla `discos`
 --
 
 CREATE TABLE `discos` (
   `id` int(10) NOT NULL,
   `autor_id` int(10) NOT NULL,
   `genero_id` int(10) NOT NULL,
-  `nombre` varchar(150) NOT NULL,
+  `titulo` varchar(150) NOT NULL,
   `precio` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `discos`
+-- Volcado de datos para la tabla `discos`
 --
 
-INSERT INTO `discos` (`id`, `autor_id`, `genero_id`, `nombre`, `precio`) VALUES
+INSERT INTO `discos` (`id`, `autor_id`, `genero_id`, `titulo`, `precio`) VALUES
 (1, 1, 4, 'Girotondo', 7500.5),
 (2, 2, 1, 'The Wall', 8750.25),
 (3, 7, 2, 'Crossroads', 10502),
-(4, 5, 1, 'Led Zeppelin I', 8500.25);
+(4, 5, 1, 'Led Zeppelin I', 8500.25),
+(5, 1, 4, 'Gaetana', 9999),
+(6, 1, 4, 'Il Mio Universo', 12500),
+(7, 8, 3, 'Aun sigue la Leccion', 7895.5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `genero`
+-- Estructura de tabla para la tabla `genero`
 --
 
 CREATE TABLE `genero` (
   `id` int(10) NOT NULL,
-  `nombre` varchar(250) NOT NULL
+  `categoria` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `genero`
+-- Volcado de datos para la tabla `genero`
 --
 
-INSERT INTO `genero` (`id`, `nombre`) VALUES
+INSERT INTO `genero` (`id`, `categoria`) VALUES
 (1, 'Rock'),
 (2, 'Blues'),
 (3, 'Cumbia'),
@@ -93,7 +97,7 @@ INSERT INTO `genero` (`id`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE `users` (
@@ -104,7 +108,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `pass`, `nivel`) VALUES
@@ -114,17 +118,17 @@ INSERT INTO `users` (`id`, `email`, `pass`, `nivel`) VALUES
 (4, 'webadmin', '$2y$10$b095X3XhrDjPwzbj3BgwiuN.1RyATcDddARL7yxi5.pBuLItt4w9K', 'admin');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `autor`
+-- Indices de la tabla `autor`
 --
 ALTER TABLE `autor`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `discos`
+-- Indices de la tabla `discos`
 --
 ALTER TABLE `discos`
   ADD PRIMARY KEY (`id`),
@@ -132,51 +136,51 @@ ALTER TABLE `discos`
   ADD KEY `autor_id` (`autor_id`) USING BTREE;
 
 --
--- Indexes for table `genero`
+-- Indices de la tabla `genero`
 --
 ALTER TABLE `genero`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indices de la tabla `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `autor`
+-- AUTO_INCREMENT de la tabla `autor`
 --
 ALTER TABLE `autor`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `discos`
+--
+ALTER TABLE `discos`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `discos`
---
-ALTER TABLE `discos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `genero`
+-- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `discos`
+-- Filtros para la tabla `discos`
 --
 ALTER TABLE `discos`
   ADD CONSTRAINT `discos_ibfk_1` FOREIGN KEY (`genero_id`) REFERENCES `genero` (`id`),
