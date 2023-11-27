@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2023 a las 03:48:39
+-- Tiempo de generación: 27-11-2023 a las 13:05:18
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -44,7 +44,9 @@ INSERT INTO `autor` (`id`, `nombre`) VALUES
 (5, 'Led Zeppelin'),
 (6, 'Soda Stereo'),
 (7, 'Eric Clapton'),
-(8, 'Leo Mattioli');
+(8, 'Leo Mattioli'),
+(9, 'Mozart'),
+(10, 'Patricio Rey y sus redonditos de ricota');
 
 -- --------------------------------------------------------
 
@@ -70,8 +72,14 @@ INSERT INTO `discos` (`id`, `autor_id`, `genero_id`, `titulo`, `precio`) VALUES
 (3, 7, 2, 'Crossroads', 10502),
 (4, 5, 1, 'Led Zeppelin I', 8500.25),
 (5, 1, 4, 'Gaetana', 9999),
-(6, 1, 4, 'Il Mio Universo', 12500),
-(7, 8, 3, 'Aun sigue la Leccion', 7895.5);
+(7, 8, 3, 'Aun sigue la Leccion', 7895.5),
+(8, 9, 5, 'Las bodas de Figaro', 12525.25),
+(9, 4, 1, 'Thunderstruck', 7850.25),
+(10, 10, 1, 'Oktubre', 7850.25),
+(11, 2, 1, 'The dark side of the moon', 12500),
+(12, 2, 1, 'Wish you were here', 12525.25),
+(13, 10, 1, 'Gulp!', 7500),
+(14, 3, 1, 'Porco Rex', 11000);
 
 -- --------------------------------------------------------
 
@@ -92,7 +100,8 @@ INSERT INTO `genero` (`id`, `categoria`) VALUES
 (1, 'Rock'),
 (2, 'Blues'),
 (3, 'Cumbia'),
-(4, 'Pop');
+(4, 'Pop'),
+(5, 'Clasica');
 
 -- --------------------------------------------------------
 
@@ -155,19 +164,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `autor`
 --
 ALTER TABLE `autor`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `discos`
 --
 ALTER TABLE `discos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
