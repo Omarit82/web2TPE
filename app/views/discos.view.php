@@ -16,7 +16,7 @@ class discosView{
                             Artista: <?= $disco->nombre ?>
                         </li>  
                         <li class="list-group-item">
-                            (<?= $id = $disco->categoria ?>)
+                            <?= $id = $disco->categoria ?>
                         </li>
                         <li class="list-group-item mb-3">
                             Precio: <?= $disco->precio?>
@@ -73,7 +73,13 @@ class discosView{
                 </li>  
                 <li class="list-group-item">
                     Titulo: <?= $disco->titulo ?>
-                </li>  
+                </li>
+                <li class="list-group-item">
+                    Artista: <?= $disco->nombre ?>
+                </li>
+                <li class="list-group-item">
+                    Genero: <?= $disco->categoria ?>
+                </li> 
                 <li class="list-group-item mb-3">
                     Precio: <?= $disco->precio?>
                 </li>  

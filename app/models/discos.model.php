@@ -46,7 +46,7 @@ class discosModel{
 
     public function modificarDisco($id){
         // Primero lo tengo que traer de la db y cargarlo a un form. Y desde ahi ejecutar el update
-        $query = $this->db->prepare('SELECT * FROM discos WHERE id = ?');
+        $query = $this->db->prepare('SELECT discos.id, autor.nombre, genero.categoria, discos.titulo, discos.precio FROM discos INNER JOIN autor ON discos.autor_id = autor.id INNER JOIN genero ON discos.genero_id = genero.id  WHERE discos.id = ?');
         $query->execute([$id]);
         $disco = $query->fetch(PDO::FETCH_OBJ);
 
